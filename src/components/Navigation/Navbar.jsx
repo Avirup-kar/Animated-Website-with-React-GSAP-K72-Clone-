@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom';
+import FullScreenNav from './FullScreenNav';
 
 const Navbar = () => {
     const navGreenRef = useRef()
+    const [openFullScreenNav, setOpenFullScreenNav] = useState(false)
     const [colorLogo, setcolorLogo] = useState("white")
      const currentPath = useLocation().pathname;
      useEffect(() => {
@@ -16,7 +18,7 @@ const Navbar = () => {
           changeColor()
      }, [setcolorLogo, currentPath])
      
-  return (
+  return !openFullScreenNav ? (
     <nav className='fixed z-10 w-full flex items-start justify-between top-0'>
       <div className='p-2'>
         <svg xmlns="http://www.w3.org/2000/svg" width="103" height="44" viewBox="0 0 103 44">
@@ -24,11 +26,13 @@ const Navbar = () => {
         </svg>
       </div>
 
-      <div onMouseEnter={() => navGreenRef.current.style.height = "100%"} onMouseLeave={() => navGreenRef.current.style.height = "0%"} className='h-13 cursor-pointer bg-black relative w-60'>
+      <div onClick={()=>setOpenFullScreenNav(true)} onMouseEnter={() => navGreenRef.current.style.height = "100%"} onMouseLeave={() => navGreenRef.current.style.height = "0%"} className='h-13 cursor-pointer bg-black relative w-60'>
        <div ref={navGreenRef} className='bg-[#D3FD50] absolute transition-all top-0 h-0 w-full'></div>
        <div className='relative'></div>
       </div>
     </nav>
+  ) : (
+    <FullScreenNav />
   )
 }
 
