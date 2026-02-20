@@ -1,13 +1,14 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useLocation } from 'react-router-dom';
 
-const Stairs = () => {
-
+const Stairs = (props) => {
+ console.log(props)
   const currentPath = useLocation().pathname;
   
   const stairParentRef = useRef(null);
+  const appRef = useRef(null);
 
   useGSAP(function(){
     const tl = gsap.timeline()
@@ -37,10 +38,16 @@ const Stairs = () => {
     tl.to(".stair", {
       y: "0%"
     })
+
+    gsap.from(appRef.current, {
+      opacity: 0,
+      delay: 1.2,
+    })
   }, [currentPath])
 
   return (
-     <div ref={stairParentRef} className="div h-full w-full fixed flex z-10 top-0">
+     <div>
+      <div ref={stairParentRef} className="div h-full w-full fixed flex z-10 top-0">
         <div className="h-full w-full flex">
         <div className="stair h-full w-1/5 bg-black"></div>
         <div className="stair h-full w-1/5 bg-black"></div>
@@ -48,6 +55,11 @@ const Stairs = () => {
         <div className="stair h-full w-1/5 bg-black"></div>
         <div className="stair h-full w-1/5 bg-black"></div> 
         </div>
+     </div>
+
+     <div ref={appRef}>
+      {props.children}
+     </div>
      </div>
   )
 }

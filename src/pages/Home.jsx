@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Video from '../components/home/Video'
 import HomeHeroText from '../components/home/HomeHeroText'
 import HomeBottomText from '../components/home/HomeBottomText'
+import Stairs from '../components/common/stairs'
 
 const Home = () => {
   return (
+  <div>
     <div>
       <div className='h-screen w-screen bg-red-900 fixed'>
         <Video />
@@ -15,6 +17,7 @@ const Home = () => {
        <HomeBottomText />
       </div>
     </div>
+  </div>
   )
 }
 

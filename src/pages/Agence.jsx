@@ -27,13 +27,21 @@ const Agence = () => {
   ]
 
   useGSAP(function(){
+
+    gsap.from(imageDivRef.current, {
+        scaleX: 0,
+        transformOrigin: "left center",
+        duration: 1.7,
+        ease: "power3.in"
+    })
+
     gsap.to(imageDivRef.current,{
       scrollTrigger: {
         trigger: imageDivRef.current,
         start: 'top 25%',
         end: 'top -133%',
-        scrub: true,
         pin: true,
+        scrub: 1,
         onUpdate: (elem)=>{
           const imageIndex = Math.round(elem.progress * (imageArray.length - 1));
           imageRef.current.src = imageArray[imageIndex]
