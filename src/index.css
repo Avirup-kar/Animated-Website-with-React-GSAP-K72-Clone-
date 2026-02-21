@@ -20,6 +20,32 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+.moveLink{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.hey{
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.Img{
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.link:hover .moveLink {
+  max-height: 100%;
+}
+
+.link:hover .hey,
+.link:hover .Img {
+  opacity: 1;
+}
+
 @keyframes moveAnimation {
   from {
     transform: translateX(0);
