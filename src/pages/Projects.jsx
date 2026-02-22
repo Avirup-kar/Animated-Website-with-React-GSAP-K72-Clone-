@@ -1,7 +1,11 @@
 import React from 'react'
 import ProjectCard from '../components/project/ProjectCard'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 
 const Project = () => {
+  gsap.registerPlugin(ScrollTrigger);
 
   const projects = [
     {
@@ -15,8 +19,29 @@ const Project = () => {
     {
       image1:'https://k72.ca/images/caseStudies/FRUITE/Fruite_thumbnail_bbq.jpg?w=1280&h=960&s=953c1f702bec28d66d07e95bc1261821',
       iamge2:'https://k72.ca/images/caseStudies/SHELTON/thumbnailimage_shelton.jpg?w=1280&h=960&s=63d0eaa180cbc02d3ada285ad9ef1479' 
-    }
+    },
+    {
+      image1:'https://k72.ca/images/caseStudies/SollioAg/thumbnailimage_SollioAg.jpg?w=1280&h=960&s=3085861fabc3a15e7f8f8a01c07afa4f',
+      iamge2: 'https://k72.ca/images/caseStudies/COUP_FUMANT/CF_thumbnail.jpg?w=1280&h=960&s=c119303a20520c4188aa3f592038fd4c',
+    },
   ]
+
+  useGSAP(function () {
+    gsap.from('.hero', {
+     height: "50px",
+     transformOrigin: "bottom",
+      stagger: {
+        amount: 1.3
+      },
+      scrollTrigger: {
+        trigger: '.lol',
+        markers: true,
+        start: 'top 83%',
+        end: 'top -200%',
+        scrub: true
+      }
+    })
+  })
 
   return (
     <div className='p-3'>
@@ -25,9 +50,9 @@ const Project = () => {
         <h3 className='font-[font2] text-4xl mb-3'>17</h3>
       </div>
 
-      <div>
+      <div className='lol h-[280vh]'>
       {projects.map((item, index) => {
-        return <div key={index} className='w-full h-130 flex gap-3 mb-3'>
+        return <div key={index} className='hero w-full h-[500px] flex gap-3 mb-3'>
             <ProjectCard image1={item.image1} iamge2={item.iamge2} />
         </div>
       })}
