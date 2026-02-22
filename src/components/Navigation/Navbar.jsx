@@ -26,9 +26,12 @@ const Navbar = () => {
         </svg>
       </div>
 
-      <div onClick={()=>setOpenFullScreenNav(true)} onMouseEnter={() => navGreenRef.current.style.height = "100%"} onMouseLeave={() => navGreenRef.current.style.height = "0%"} className='h-13 cursor-pointer bg-black relative w-60'>
+      <div onClick={()=>setOpenFullScreenNav(true)} onMouseEnter={() => navGreenRef.current.style.height = "100%"} onMouseLeave={() => navGreenRef.current.style.height = "0%"} className='h-13 group cursor-pointer bg-black relative w-60'>
        <div ref={navGreenRef} className='bg-[#D3FD50] absolute transition-all top-0 h-0 w-full'></div>
-       <div className='relative'></div>
+       <div className='h-full w-full absolute flex flex-col items-end px-6 py-5 gap-1'>
+         <div className="w-13 h-[1.5px] bg-white group-hover:bg-black"></div>
+         <div className="w-6.5 h-[1.5px] bg-white group-hover:bg-black"></div>
+       </div>
       </div>
     </nav>
   ) : (

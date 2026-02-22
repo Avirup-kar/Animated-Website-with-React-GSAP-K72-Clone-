@@ -23,12 +23,13 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
     })
 
     tl.to(".main", {
-     backgroundColor: "#D3FD50",
+     backgroundColor: "balck",
     });
 
     tl.from(".link", {
-      rotateX: 90
-    }, "-=0.5")
+      rotateX: 90,
+      stagger: 0.1
+        }, "-=0.9")
 
 
  
@@ -39,12 +40,12 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
   tlRef.current.reverse();
   setTimeout(()=>{
     setOpenFullScreenNav(false)
-  },1200)
-};
+  },1600)
+  };
 
 
   return (
-    <div className='main h-screen w-full absolute z-20 bg-black'>     
+    <div className='main h-screen w-full absolute z-20'>     
       <div className="h-full w-full fixed flex top-0">
         <div className="h-full w-full flex gap-[-1]">
         <div className="stairing h-full w-1/5 bg-black"></div>
@@ -55,7 +56,7 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
         </div>
       </div>
 
-     <div ref={fullNavLinksRef} className="relative top-0">    
+     <div ref={fullNavLinksRef} className="fixed w-full top-0">    
        <div className="navlink flex w-full justify-between lg:p-3 p-2 items-start">
            <div className=''>
                <div className='lg:w-30 w-24'>
