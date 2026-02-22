@@ -27,7 +27,9 @@ const Project = () => {
 
       <div>
       {projects.map((item, index) => {
-        return  <ProjectCard key={index} image1={item.image1} iamge2={item.iamge2} />
+        return <div key={index} className='w-full h-130 flex gap-3 mb-3'>
+            <ProjectCard image1={item.image1} iamge2={item.iamge2} />
+        </div>
       })}
       </div>
   </div>
