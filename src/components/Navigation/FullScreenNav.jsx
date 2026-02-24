@@ -26,10 +26,11 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
      backgroundColor: "balck",
     });
 
-    tl.from(".link", {
+    tl.from(".linkh1", {
       rotateX: 90,
+      transformOrigin: "top center",
       stagger: 0.1
-        }, "-=0.9")
+    }, "-=0.9")
 
 
  
@@ -75,7 +76,7 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
       <div className="">    
         <div className='link uppercase cursor-pointer h-[15vh] relative w-full text-white text-[8vw] font-[font2] border-t border-gray-500'>
         <div className="h-full f-full flex items-center justify-center">
-           <h1 className='leading-[0.8] mt-0 lg:mt-5 text-center'>Projets</h1> 
+           <h1 className='linkh1 leading-[0.8] mt-0 lg:mt-5 text-center'>Projets</h1> 
         </div>
          <div className='moveLink flex items-center absolute top-0 left-0 w-full h-full bg-[#D3FD50] text-black'>
             <div className='moveX flex leading-[0.8] justify-center pt-3 items-center gap-8'>
@@ -96,7 +97,7 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
         
         <div className='link uppercase cursor-pointer h-[15vh] relative w-full text-white text-[8vw] font-[font2] border-t border-gray-500'>
         <div className="h-full f-full flex items-center justify-center">
-           <h1 className='leading-[0.8] mt-0 lg:mt-5 text-center'>Agence</h1>
+           <h1 className='linkh1 leading-[0.8] mt-0 lg:mt-5 text-center'>Agence</h1>
         </div>
          <div className='moveLink flex items-center absolute top-0 left-0 w-full h-full bg-[#D3FD50] text-black'>
             <div className='moveX flex leading-[0.8] justify-center pt-3 items-center gap-8'>
@@ -117,7 +118,7 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
 
         <div className='link uppercase cursor-pointer h-[15vh] relative w-full text-white text-[8vw] font-[font2] border-t border-gray-500'>
         <div className="h-full f-full flex items-center justify-center">
-           <h1 className='leading-[0.8] mt-0 lg:mt-5 text-center'>Contact</h1>
+           <h1 className='linkh1 leading-[0.8] mt-0 lg:mt-5 text-center'>Contact</h1>
         </div>       
          <div className='moveLink flex items-center absolute top-0 left-0 w-full h-full bg-[#D3FD50] text-black'>
             <div className='moveX flex leading-[0.8] justify-center pt-3 items-center gap-8'>
@@ -138,7 +139,7 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
 
         <div className='link uppercase cursor-pointer h-[15vh] relative w-full text-white text-[8vw] font-[font2] border-y border-gray-500'>
          <div className="h-full f-full flex items-center justify-center">
-            <h1 className='leading-[0.8] mt-0 lg:mt-5 text-center'>Blogue</h1>
+            <h1 className='linkh1 leading-[0.8] mt-0 lg:mt-5 text-center'>Blogue</h1>
          </div>
          <div className='moveLink flex items-center absolute top-0 left-0 w-full h-full bg-[#D3FD50] text-black'>
             <div className='moveX flex leading-[0.8] justify-center pt-3 items-center gap-8'>

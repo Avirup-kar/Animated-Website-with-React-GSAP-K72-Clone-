@@ -58,7 +58,7 @@ const Project = () => {
         <h3 className='font-[font2] text-4xl mb-3'>17</h3>
       </div>
 
-      <div className='lol h-[420vh] hidden lg:block'>
+      <div className='lol min-h-[420vh] hidden lg:block'>
       {projects.map((item, index) => {
         return <div key={index} className='hero lg:w-full h-125 lg:flex gap-3 mb-3'>
             <ProjectCard image1={item.image1} iamge2={item.iamge2} />
@@ -66,7 +66,7 @@ const Project = () => {
       })}
       </div>
 
-      <div className='h-[420vh] block lg:hidden'>
+      <div className='min-h-[420vh] relative block lg:hidden'>
       {projects.map((item, index) => {
         return <div key={index} className='lg:w-full flex flex-col h-125 gap-3 mb-3'>
             <ProjectCard image1={item.image1} iamge2={item.iamge2} />
