@@ -24,20 +24,28 @@ const Project = () => {
       image1:'https://k72.ca/images/caseStudies/SollioAg/thumbnailimage_SollioAg.jpg?w=1280&h=960&s=3085861fabc3a15e7f8f8a01c07afa4f',
       iamge2: 'https://k72.ca/images/caseStudies/COUP_FUMANT/CF_thumbnail.jpg?w=1280&h=960&s=c119303a20520c4188aa3f592038fd4c',
     },
+    {
+      image1:'https://k72.ca/images/caseStudies/SollioAg/thumbnailimage_SollioAg.jpg?w=1280&h=960&s=3085861fabc3a15e7f8f8a01c07afa4f',
+      iamge2: 'https://k72.ca/images/caseStudies/COUP_FUMANT/CF_thumbnail.jpg?w=1280&h=960&s=c119303a20520c4188aa3f592038fd4c',
+    },
+    {
+      image1:'https://k72.ca/images/caseStudies/SollioAg/thumbnailimage_SollioAg.jpg?w=1280&h=960&s=3085861fabc3a15e7f8f8a01c07afa4f',
+      iamge2: 'https://k72.ca/images/caseStudies/COUP_FUMANT/CF_thumbnail.jpg?w=1280&h=960&s=c119303a20520c4188aa3f592038fd4c',
+    },
   ]
 
   useGSAP(function () {
     gsap.from('.hero', {
-     height: "50px",
+     height: "35px",
      transformOrigin: "bottom",
       stagger: {
-        amount: 1.3
+        amount: 2.2
       },
       scrollTrigger: {
         trigger: '.lol',
         markers: true,
         start: 'top 83%',
-        end: 'top -200%',
+        end: 'top -340%',
         scrub: true
       }
     })
@@ -50,9 +58,17 @@ const Project = () => {
         <h3 className='font-[font2] text-4xl mb-3'>17</h3>
       </div>
 
-      <div className='lol h-[280vh]'>
+      <div className='lol h-[420vh] hidden lg:block'>
       {projects.map((item, index) => {
-        return <div key={index} className='hero w-full h-[500px] flex gap-3 mb-3'>
+        return <div key={index} className='hero lg:w-full h-125 lg:flex gap-3 mb-3'>
+            <ProjectCard image1={item.image1} iamge2={item.iamge2} />
+        </div>
+      })}
+      </div>
+
+      <div className='h-[420vh] block lg:hidden'>
+      {projects.map((item, index) => {
+        return <div key={index} className='lg:w-full flex flex-col h-125 gap-3 mb-3'>
             <ProjectCard image1={item.image1} iamge2={item.iamge2} />
         </div>
       })}
