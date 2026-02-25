@@ -43,7 +43,6 @@ const Project = () => {
       },
       scrollTrigger: {
         trigger: '.lol',
-        markers: true,
         start: 'top 83%',
         end: 'top -340%',
         scrub: true
@@ -78,19 +77,19 @@ const Project = () => {
       <div className="bg-black text-white min-h-[60vh] flex flex-col justify-between p-6">
 
       {/* TOP SECTION */}
-      <div className="flex font-[font2] justify-between items-start flex-wrap gap-4">
+      <div className="flex select-none font-[font2] justify-between items-start flex-wrap gap-4">
 
         {/* Social Pills */}
         <div className="flex gap-4 flex-wrap">
           {["FB", "IG", "IN", "BE"].map((item, i) => (
-            <div key={i} className="border border-white rounded-full px-6 py-1 pt-3 leading-[5vh] text-4xl md:text-6xl font-light tracking-wide cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+            <div key={i} className="border-2 border-white hover:border-[#D3FD50] rounded-full px-6 py-1 pt-3 leading-[5vh] text-4xl md:text-6xl font-light tracking-wide cursor-pointer hover:text-[#D3FD50] transition-all duration-300">
               {item}
             </div>
           ))}
         </div>
 
         {/* Contact Button */}
-        <div className="border border-white rounded-full leading-[4vh] px-10 py-1 text-5xl md:text-7xl font-light flex items-center gap-6 cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+        <div className="border-2 border-white hover:border-[#D3FD50] rounded-full leading-[4vh] px-10 py-1 text-5xl md:text-7xl font-light flex items-center gap-6 cursor-pointer hover:text-[#D3FD50] transition-all duration-300">
           CONTACT
           <span className="text-4xl md:text-6xl">▼</span>
         </div>
@@ -108,22 +107,22 @@ const Project = () => {
 
         {/* Center Links */}
         <div className="flex flex-wrap justify-center gap-6 text-center">
-          <span className="cursor-pointer hover:underline">
+          <span className="cursor-pointer hover:text-[#D3FD50] hover:underline">
             POLITIQUE DE CONFIDENTIALITÉ
           </span>
-          <span className="cursor-pointer hover:underline">
+          <span className="cursor-pointer hover:text-[#D3FD50] hover:underline">
             AVIS DE CONFIDENTIALITÉ
           </span>
-          <span className="cursor-pointer hover:underline">
+          <span className="cursor-pointer hover:text-[#D3FD50] hover:underline">
             RAPPORT ÉTHIQUE
           </span>
-          <span className="cursor-pointer hover:underline">
+          <span className="cursor-pointer hover:text-[#D3FD50] hover:underline">
             OPTIONS DE CONSENTEMENT
           </span>
         </div>
 
         {/* Right */}
-        <div className="cursor-pointer hover:underline">
+        <div className="cursor-pointer hover:text-[#D3FD50] hover:underline">
           RETOUR EN HAUT
         </div>
 
