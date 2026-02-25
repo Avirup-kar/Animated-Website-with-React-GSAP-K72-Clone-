@@ -52,26 +52,83 @@ const Project = () => {
   })
 
   return (
-    <div className='p-3'>
-      <div className='pt-[52vh] flex'>
+    <div className='w-full'>
+      <div className='pt-[32vh] lg:pt-[52vh] flex'>
         <h2 className='font-[font2] text-[12vw] uppercase leading-[18vh]'>projects</h2>
         <h3 className='font-[font2] text-4xl mb-3'>17</h3>
       </div>
 
-      <div className='lol min-h-[420vh] hidden lg:block'>
-      {projects.map((item, index) => {
-        return <div key={index} className='hero lg:w-full h-125 lg:flex gap-3 mb-3'>
-            <ProjectCard image1={item.image1} iamge2={item.iamge2} />
-        </div>
-      })}
+      <div className='lol min-h-[320vh] hidden lg:block p-3'>
+        {projects.map((item, index) => {
+          return <div key={index} className='hero lg:w-full h-125 lg:flex gap-3 mb-3'>
+              <ProjectCard image1={item.image1} iamge2={item.iamge2} />
+          </div>
+        })}
       </div>
 
-      <div className='min-h-[420vh] relative block lg:hidden'>
-      {projects.map((item, index) => {
-        return <div key={index} className='lg:w-full flex flex-col h-125 gap-3 mb-3'>
-            <ProjectCard image1={item.image1} iamge2={item.iamge2} />
+      <div className='min-h-[220vh] w-full relative block lg:hidden p-3'>
+        {projects.map((item, index) => {
+          return <div key={index} className='w-full flex flex-col h-125 gap-3 mb-3'>
+              <ProjectCard image1={item.image1} iamge2={item.iamge2} />
+          </div>
+        })}
+      </div>
+
+
+      <div className="bg-black text-white min-h-[60vh] flex flex-col justify-between p-6">
+
+      {/* TOP SECTION */}
+      <div className="flex font-[font2] justify-between items-start flex-wrap gap-4">
+
+        {/* Social Pills */}
+        <div className="flex gap-4 flex-wrap">
+          {["FB", "IG", "IN", "BE"].map((item, i) => (
+            <div key={i} className="border border-white rounded-full px-6 py-1 pt-3 leading-[5vh] text-4xl md:text-6xl font-light tracking-wide cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+              {item}
+            </div>
+          ))}
         </div>
-      })}
+
+        {/* Contact Button */}
+        <div className="border border-white rounded-full leading-[4vh] px-10 py-1 text-5xl md:text-7xl font-light flex items-center gap-6 cursor-pointer hover:bg-white hover:text-black transition-all duration-300">
+          CONTACT
+          <span className="text-4xl md:text-6xl">▼</span>
+        </div>
+
+      </div>
+
+      {/* BOTTOM SECTION */}
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-sm md:text-base mt-20">
+
+        {/* Left */}
+        <div className="flex items-center gap-4">
+          <span className="text-xl">🌐</span>
+          <span>MONTREAL_09:49:03</span>
+        </div>
+
+        {/* Center Links */}
+        <div className="flex flex-wrap justify-center gap-6 text-center">
+          <span className="cursor-pointer hover:underline">
+            POLITIQUE DE CONFIDENTIALITÉ
+          </span>
+          <span className="cursor-pointer hover:underline">
+            AVIS DE CONFIDENTIALITÉ
+          </span>
+          <span className="cursor-pointer hover:underline">
+            RAPPORT ÉTHIQUE
+          </span>
+          <span className="cursor-pointer hover:underline">
+            OPTIONS DE CONSENTEMENT
+          </span>
+        </div>
+
+        {/* Right */}
+        <div className="cursor-pointer hover:underline">
+          RETOUR EN HAUT
+        </div>
+
+      </div>
+
       </div>
   </div>
   )

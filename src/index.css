@@ -54,3 +54,8 @@ body {
     transform: translateX(-100%);
   }
 }
+
+::selection {
+  background-color: #D3FD50;
+  color: black;
+}

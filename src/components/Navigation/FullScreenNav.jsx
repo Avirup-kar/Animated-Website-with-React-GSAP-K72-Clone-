@@ -23,7 +23,7 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
     })
 
     tl.to(".main", {
-     backgroundColor: "balck",
+     backgroundColor: "black",
     });
 
     tl.from(".linkh1", {
@@ -66,9 +66,9 @@ const FullScreenNav = ({setOpenFullScreenNav}) => {
                    </svg>
                </div>
            </div>
-           <div onClick={()=>{handleClose()}} className='group lg:h-27 h-17 w-17 lg:w-27 relative cursor-pointer'>
-               <div className='lg:h-38 h-26 lg:w-0.5 w-0.5 -rotate-45 origin-top absolute bg-white group-hover:bg-[#D3FD50]'></div>
-               <div className='lg:h-38 h-26 lg:w-0.5 w-0.5 right-0 rotate-45 origin-top absolute bg-white group-hover:bg-[#D3FD50]'></div>
+           <div onClick={()=>{handleClose()}} className='group mb-6 lg:mb-0 lg:h-27 h-17 w-17 lg:w-27 relative cursor-pointer'>
+               <div className='lg:h-38 h-24 lg:w-0.5 w-0.5 -rotate-45 origin-top absolute bg-white group-hover:bg-[#D3FD50]'></div>
+               <div className='lg:h-38 h-24 lg:w-0.5 w-0.5 right-0 rotate-45 origin-top absolute bg-white group-hover:bg-[#D3FD50]'></div>
            </div>
       </div>
 
