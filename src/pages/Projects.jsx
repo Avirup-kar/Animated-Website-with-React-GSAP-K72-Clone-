@@ -36,7 +36,7 @@ const Project = () => {
 
   useGSAP(function () {
     gsap.from('.hero', {
-     height: "35px",
+     height: "30px",
      transformOrigin: "bottom",
       stagger: {
         amount: 2.2
@@ -73,7 +73,8 @@ const Project = () => {
         })}
       </div>
 
-
+     
+     {/* footer */}
       <div className="bg-black text-white min-h-[60vh] flex flex-col justify-between p-6">
 
       {/* TOP SECTION */}

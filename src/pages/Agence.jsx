@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all';
 import { useRef } from 'react'
+import AgencebottomAnimation from '../components/agenece/AgencebottomAnimation';
 
 const Agence = () => {
 
@@ -53,12 +54,12 @@ const Agence = () => {
   return (
     <div>
       <div className='section1'>
-        <div ref={imageDivRef} className='h-75 w-57 overflow-hidden absolute rounded-3xl top-45 left-[30vw] bg-amber-800'>
+        <div ref={imageDivRef} className='h-55 w-37 lg:h-75 lg:w-57 overflow-hidden absolute rounded-3xl top-45 left-[30vw] bg-amber-800'>
          <img ref={imageRef} className='h-full w-full object-cover' alt="" />
         </div>
         <div className=' relative font-[font2]'>
          <div className='mt-[57vh]'>
-           <h1 className='text-[20vw] uppercase leading-[17vw] text-center'>Soixan7e <br />Douze</h1>
+           <h1 className='text-[20vw] uppercase leading-[17vw] text-center'>Soixan7e<br/>Douze</h1>
          </div>
 
          <div className='pl-[40%] pr-10'>
@@ -67,9 +68,55 @@ const Agence = () => {
         </div>
       </div>
 
-      <div className='section2 h-screen'>
+      {/* mid section */}
+      <div className='section2 relative font-[font2] pt-28 h-screen'>
+        <section className=" ext-black px-6 md:px-16 py-20">
 
+      {/* TOP ROW */}
+      <div className="flex flex-col md:flex-row justify-between gap-10 mb-24">
+
+        {/* Left Title */}
+        <h2 className="text-xl md:text-2xl font-medium">
+          Expertise
+        </h2>
+
+        {/* Right List */}
+        <div className="text-xs md:text-xl lg:text-2xl leading-5 font-medium space-y-2">
+          <p>Stratégie</p>
+          <p>Publicité</p>
+          <p>Branding</p>
+          <p>Design</p>
+          <p>Contenu</p>
+        </div>
+
+       </div>
+
+       {/* BOTTOM TEXT GRID */}
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-lg md:text-xl leading-relaxed font-medium">
+
+        <p>
+          Nos projets_ naissent dans l’humilité, grandissent dans la curiosité
+          et vivent grâce à la créativité sous toutes ses formes.
+        </p>
+
+        <p>
+          Notre création_ bouillonne dans un environnement où le talent a le
+          goût d’exploser. Où on se sent libre d’être la meilleure version de
+          soi-même.
+        </p>
+
+        <p>
+          Notre culture_ c’est l’ouverture aux autres. Point. Tout l’équipage
+          participe à bâtir une agence dont on est fiers.
+        </p>
+
+       </div>
+
+       </section>
       </div>
+
+       {/* animation div */}
+       <AgencebottomAnimation />
     </div>
   )
 }
