@@ -1,50 +1,70 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React from 'react'
+import { ScrollTrigger } from 'gsap/all';
+import React, { useRef } from 'react'
 
 const AgencebottomAnimation = () => {
+gsap.registerPlugin(ScrollTrigger);
+    const container = useRef()
 
-    useGSAP(function(){
+  useGSAP(() => {
+
     gsap.to('.midsection', {
-         rotate: -20,
-         scale: 0.8,
-         opacity: -1,
-         scrollTrigger: {
-          trigger: '.mid',
-          markers: true,
-          start: 'top 0%',
-          end: 'top -400%',
-          pin: true,
-          scrub: 1,
-         }
+      scrollTrigger: {
+        trigger: '.mid',
+        markers: true,
+        start: 'top 0%',
+        end: 'top -100%',
+        scrub: 1,
+        pin: true,
+      }
     })
 
     gsap.to('.aftermidsection', {
       top: '0%',
       scaleX: 1.42,
       scrollTrigger: {
-        trigger: '.main ',
+        trigger: '.aftermidsection',
+        start: 'top 100%',
         markers: true,
-        start: 'top 0%',
-        end: 'top -100%',
+        end: 'top 0%',
         scrub: 2,
-        pin: true,
       }
     })
+
+    gsap.to('.afterAftermidsection', {
+      top: '0%',
+      scaleX: 1.42,
+      scrollTrigger: {
+        trigger: '.aftermidsection',
+        start: 'top 0%',
+        pin: true,
+        markers: true,
+        end: 'top -100%',
+        scrub: 2,
+      }
     })
 
+  }, { scope: container })
   return (
-    <div className='main flex relative bg-black flex-col w-full items-center h-[390vh] xl:h-[300vh] overflow-hidden'>
-      <div className='mid bg-gradient-to-br from-[#2f2f2f] to-[#101010] w-full min-h-[120vh]'>
-        <div className='midsection bg-black relative w-full min-h-screen overflow-hidden'>
-       
+    <div ref={container} className='main flex relative bg-black flex-col w-full items-center min-h-[300vh] overflow-hidden'>
+      <div className='mid bg-linear-to-br from-[#2f2f2f] to-[#101010] w-full min-h-[100vh]'>
+        <div className='midsection bg-black text-white relative w-full min-h-screen overflow-hidden'>
+           hiiii
         </div>
       </div>
 
-    
-      <div className='aftermidsection bg-red-300 w-[70vw] flex flex-col items-center absolute min-h-full  top-[100%] py-2 px-10'> 
+    <div className='aftermidsection relative w-full min-h-[100vh]'>
+      <div className='bg-red-300 w-full flex flex-col items-center absolute min-h-full py-2 px-10'> 
+        oiiii kutta
+      </div>
+    </div>
+
+    <div className='afterAftermidsection relative w-full min-h-[100vh]'>
+      <div className='bg-green-300 w-full flex flex-col items-center absolute min-h-full py-2 px-10'> 
         
       </div>
+    </div>
     </div> 
   )
 }
