@@ -12,10 +12,9 @@ gsap.registerPlugin(ScrollTrigger);
     gsap.to('.midsection', {
       scrollTrigger: {
         trigger: '.mid',
-        markers: true,
         start: 'top 0%',
         end: 'top -100%',
-        scrub: 1,
+        scrub: 2,
         pin: true,
       }
     })
@@ -26,7 +25,6 @@ gsap.registerPlugin(ScrollTrigger);
       scrollTrigger: {
         trigger: '.aftermidsection',
         start: 'top 100%',
-        markers: true,
         end: 'top 0%',
         scrub: 2,
       }
@@ -39,7 +37,6 @@ gsap.registerPlugin(ScrollTrigger);
         trigger: '.aftermidsection',
         start: 'top 0%',
         pin: true,
-        markers: true,
         end: 'top -100%',
         scrub: 2,
       }
@@ -49,8 +46,8 @@ gsap.registerPlugin(ScrollTrigger);
   return (
     <div ref={container} className='main flex relative bg-black flex-col w-full items-center min-h-[300vh] overflow-hidden'>
       <div className='mid bg-linear-to-br from-[#2f2f2f] to-[#101010] w-full min-h-[100vh]'>
-        <div className='midsection bg-black text-white relative w-full min-h-screen overflow-hidden'>
-           hiiii
+        <div className='midsection bg-black text-white relative w-full min-h-full overflow-y-hidden'>
+           <img className="w-full h-full object-cover" src="https://k72.ca/images/caseStudies/Opto/thumbnailimage_opto.jpg?w=1280&h=960&s=938f0bfb3de1ff2a2846b884eec2d757" alt="" />
         </div>
       </div>
 
