@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all';
 import { useRef } from 'react'
 import AgencebottomAnimation from '../components/agenece/AgencebottomAnimation';
+import Middle from '../components/agenece/Middle';
 
 const Agence = () => {
 
@@ -68,8 +69,8 @@ const Agence = () => {
         </div>
       </div>
 
-      {/* mid section */}
-      <div className='section2 relative font-[font2] pt-28 h-screen'>
+   {/* mid section */}
+      <div className='section2 relative font-[font2] pt-28 h-[90vh]'>
         <section className=" ext-black px-6 md:px-16 py-20">
 
       {/* TOP ROW */}
@@ -114,6 +115,9 @@ const Agence = () => {
 
        </section>
       </div>
+
+      {/* afteMidSection */}
+       <Middle />
 
        {/* animation div */}
        <AgencebottomAnimation />
